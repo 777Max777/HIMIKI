@@ -1,1 +1,2 @@
 D:\study\diplom\diplom\bin\Debug\diplom.exe.config
+C:\Users\Александр\Desktop\GitHub\diplom\bin\Debug\diplom.exe.config
