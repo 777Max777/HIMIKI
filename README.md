@@ -1,2 +1,0 @@
-# HIMIKI
-# HIMIKI
