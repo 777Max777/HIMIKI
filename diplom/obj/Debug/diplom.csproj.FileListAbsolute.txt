@@ -1,1 +1,14 @@
 D:\study\diplom\diplom\bin\Debug\diplom.exe.config
+D:\study\diplom\diplom\bin\Debug\diplom.exe
+D:\study\diplom\diplom\bin\Debug\diplom.pdb
+D:\study\diplom\diplom\obj\Debug\diplom.csprojResolveAssemblyReference.cache
+D:\study\diplom\diplom\obj\Debug\MainWindow.g.cs
+D:\study\diplom\diplom\obj\Debug\App.g.cs
+D:\study\diplom\diplom\obj\Debug\diplom_MarkupCompile.cache
+D:\study\diplom\diplom\obj\Debug\diplom_MarkupCompile.lref
+D:\study\diplom\diplom\obj\Debug\MainWindow.baml
+D:\study\diplom\diplom\obj\Debug\diplom.g.resources
+D:\study\diplom\diplom\obj\Debug\diplom.Properties.Resources.resources
+D:\study\diplom\diplom\obj\Debug\diplom.csproj.GenerateResource.Cache
+D:\study\diplom\diplom\obj\Debug\diplom.exe
+D:\study\diplom\diplom\obj\Debug\diplom.pdb

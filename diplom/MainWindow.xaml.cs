@@ -24,5 +24,10 @@ namespace diplom
         {
             InitializeComponent();
         }
+
+        public void Tree_Categories_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            textBox.AppendText("Хуй");
+        }
     }
 }
