@@ -45,9 +45,6 @@
                 <TreeViewItem Header="Родник" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
             </TreeViewItem>
         </TreeView>
-        <TextBox x:Name="textBox"
-                 Margin="10,430,10,10"
-                 TextWrapping="Wrap" Grid.Row="2" />
         <Menu x:Name="menu" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="3" >
             <MenuItem Header="Фаил" Grid.Row="1">
                 <MenuItem Header="Печать"/>
