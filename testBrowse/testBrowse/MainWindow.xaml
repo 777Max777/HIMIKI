@@ -1,0 +1,22 @@
+﻿<Window x:Class="testBrowse.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testBrowse"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="686.425" Width="1599.675">
+    <Grid>
+        <WebBrowser x:Name="webb" HorizontalAlignment="Left" Margin="346,57,0,10" Width="1201" Loaded="webb_Loaded"/>
+        <TextBox x:Name="txt_Street" HorizontalAlignment="Left" Height="23" Margin="187,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="txt_City" HorizontalAlignment="Left" Height="23" Margin="187,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="txt_State" HorizontalAlignment="Left" Height="23" Margin="187,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="txt_Zip" HorizontalAlignment="Left" Height="23" Margin="187,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+        <Label x:Name="label" Content="Street" HorizontalAlignment="Left" Margin="141,53,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="City" HorizontalAlignment="Left" Margin="152,83,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labe2" Content="State" HorizontalAlignment="Left" Margin="145,109,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Zip" HorizontalAlignment="Left" Margin="155,140,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Search_data" Content="Search" HorizontalAlignment="Left" Margin="224,188,0,0" VerticalAlignment="Top" Width="75" Click="Search_data_Click"/>
+
+    </Grid>
+</Window>
