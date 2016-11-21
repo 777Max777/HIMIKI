@@ -46,7 +46,8 @@
             </TreeViewItem>
         </TreeView>
         <Menu x:Name="menu" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="3" >
-            <MenuItem Header="Фаил" Grid.Row="1">
+            <MenuItem Header="Фаил" Grid.Row="1" Click="MenuItem_Click">
+                <MenuItem Header="Соединить с базой данных "/>
                 <MenuItem Header="Печать"/>
                 <MenuItem Header="Экспорт"/>
                 <MenuItem Header="Выход"/>
@@ -63,15 +64,22 @@
         </Menu>
 
         <TabControl x:Name="tabControl" Grid.Column="1"  Grid.Row="2" Grid.ColumnSpan="2" Margin="0,10,10,10">
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5" Margin="0,0,3,6">
+            <TabItem Header="Данные">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-1,-3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="213*"/>
-                        <ColumnDefinition Width="358*"/>
+                        <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
+
+                    <DataGrid x:Name="dataGrid" Margin="0,57,-218,-35" VerticalAlignment="Top" Height="353" Grid.RowSpan="2"/>
+                    <Button x:Name="button" Content="Ввести данные" HorizontalAlignment="Left" Margin="201,0,0,311" VerticalAlignment="Bottom" Width="158" Height="34" FontFamily="Gabriola" FontSize="20" Click="button_Click"/>
+
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
+            <TabItem Header="Карта">
                 <Grid Background="#FFE5E5E5" HorizontalAlignment="Left" Width="571" Height="391" VerticalAlignment="Top"/>
             </TabItem>
         </TabControl>
