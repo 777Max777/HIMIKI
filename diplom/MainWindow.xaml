@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:diplom"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="MainWindow"
+        Title="Электронный нос"
         Width="799"
         Height="556.452"
         mc:Ignorable="d"
@@ -52,30 +52,39 @@
                 <MenuItem Header="Экспорт"/>
                 <MenuItem Header="Выход"/>
             </MenuItem>
+            
+            <MenuItem Header="Сервис">
+                <MenuItem Header="Создать профиль" Click="CreateProf_Click1"/>
+                <MenuItem Header="Настройка профиля"/>
+                <MenuItem Header="Настройка сенсоров"/>
+                <MenuItem Header="Настройка COM-порта"/>
+            </MenuItem>
 
             <MenuItem Header="Измерение">
                 <MenuItem Header="Добавить измерение"/>
             </MenuItem>
 
-            <MenuItem Header="Настройки">
-                <MenuItem Header="Настройка профиля"/>
-            </MenuItem>
 
         </Menu>
 
-        <TabControl x:Name="tabControl" Grid.Column="1"  Grid.Row="2" Grid.ColumnSpan="2" Margin="0,10,10,10">
+        <TabControl x:Name="tabControl" Grid.Column="1"  Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="0,10,10,10">
             <TabItem Header="Данные">
                 <Grid Background="#FFE5E5E5" Margin="0,0,-1,-3">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"></RowDefinition>
-                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto" MinHeight="37"/>
+                        <RowDefinition Height="371" MinHeight="371"/>
+
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="171"/>
+                        <ColumnDefinition Width="auto" MinWidth="400"/>
+                        <ColumnDefinition/>
+
                     </Grid.ColumnDefinitions>
 
-                    <DataGrid x:Name="dataGrid" Margin="0,57,-218,-35" VerticalAlignment="Top" Height="353" Grid.RowSpan="2"/>
-                    <Button x:Name="button" Content="Ввести данные" HorizontalAlignment="Left" Margin="201,0,0,311" VerticalAlignment="Bottom" Width="158" Height="34" FontFamily="Gabriola" FontSize="20" Click="button_Click"/>
+                    <Button x:Name="button" Content="Ввести данные" Margin="6,0,9,3" FontFamily="Gabriola" FontSize="20" Click="button_Click"/>
+                    <DataGrid x:Name="dataGrid" Margin="1,0,2,1" SelectionChanged="dataGrid_SelectionChanged" Grid.Row="1" Grid.ColumnSpan="3"/>
+
 
                 </Grid>
             </TabItem>

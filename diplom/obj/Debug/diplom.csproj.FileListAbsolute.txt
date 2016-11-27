@@ -26,5 +26,10 @@ C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\diplom.Properties.Re
 C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\diplom.csproj.GenerateResource.Cache
 C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\diplom.exe
 C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\diplom.pdb
-C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\Window1.g.cs
-C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\Window1.baml
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\Login.g.cs
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\Login.baml
+C:\Users\Александр\Desktop\GitHub\bin\Debug\diplom.exe.config
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\CreateProf.g.cs
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\CreateProf.baml
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\CreateProf2.g.cs
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\CreateProf2.baml

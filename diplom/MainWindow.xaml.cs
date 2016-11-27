@@ -30,7 +30,8 @@ namespace diplom
 
     public partial class MainWindow : Window
     {
-        
+        //private CreateProf CreateProfil = new CreateProf();
+        private CreateProf Prof;
         private Login logwin; 
         public MainWindow()
         {
@@ -68,6 +69,17 @@ namespace diplom
         private void button_Click(object sender, RoutedEventArgs e)
         {
             updateTable();
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CreateProf_Click1(object sender, RoutedEventArgs e)
+        {
+            Prof = new CreateProf();
+            Prof.ShowDialog();
         }
     }
 }
