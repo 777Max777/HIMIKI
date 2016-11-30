@@ -32,7 +32,8 @@ namespace diplom
     {
         //private CreateProf CreateProfil = new CreateProf();
         private CreateProf Prof;
-        private Login logwin; 
+        private Login logwin;
+        private SelectProf SelectProf;
         public MainWindow()
         {
             InitializeComponent();
@@ -80,6 +81,12 @@ namespace diplom
         {
             Prof = new CreateProf();
             Prof.ShowDialog();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            SelectProf = new SelectProf();
+            SelectProf.ShowDialog();
         }
     }
 }

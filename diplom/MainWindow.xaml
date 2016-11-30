@@ -61,7 +61,7 @@
             </MenuItem>
 
             <MenuItem Header="Измерение">
-                <MenuItem Header="Добавить измерение"/>
+                <MenuItem Header="Добавить измерение" Click="MenuItem_Click_1"/>
             </MenuItem>
 
 
