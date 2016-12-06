@@ -35,3 +35,5 @@ C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\CreateProf2.g.cs
 C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\CreateProf2.baml
 C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\SelectProf.g.cs
 C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\SelectProf.baml
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\Com.g.cs
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\Com.baml

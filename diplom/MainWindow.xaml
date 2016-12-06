@@ -23,7 +23,7 @@
             <ColumnDefinition Width="302*" />
             <ColumnDefinition Width="6*"  />
         </Grid.ColumnDefinitions>
-        <TreeView Name="Tree_Categories" Margin="10" Grid.Row="2"  >
+        <TreeView Name="Tree_Categories" Margin="10" Grid.Row="1" Grid.RowSpan="2"  >
             <TreeViewItem Header="Природная вода">
                 <TreeViewItem Header="Снеговая" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
                 <TreeViewItem Header="Осадки" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
@@ -52,12 +52,12 @@
                 <MenuItem Header="Экспорт"/>
                 <MenuItem Header="Выход"/>
             </MenuItem>
-            
+
             <MenuItem Header="Сервис">
                 <MenuItem Header="Создать профиль" Click="CreateProf_Click1"/>
                 <MenuItem Header="Настройка профиля"/>
                 <MenuItem Header="Настройка сенсоров"/>
-                <MenuItem Header="Настройка COM-порта"/>
+                <MenuItem Header="Настройка COM-порта" Click="SelectCom_Click_2"/>
             </MenuItem>
 
             <MenuItem Header="Измерение">
@@ -67,7 +67,7 @@
 
         </Menu>
 
-        <TabControl x:Name="tabControl" Grid.Column="1"  Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="0,10,10,10">
+        <TabControl x:Name="tabControl" Grid.Column="1"  Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="0,10,4,10">
             <TabItem Header="Данные">
                 <Grid Background="#FFE5E5E5" Margin="0,0,-1,-3">
                     <Grid.RowDefinitions>

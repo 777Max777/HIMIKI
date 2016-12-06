@@ -31,6 +31,7 @@ namespace diplom
     public partial class MainWindow : Window
     {
         //private CreateProf CreateProfil = new CreateProf();
+        private Com ComPort;
         private CreateProf Prof;
         private Login logwin;
         private SelectProf SelectProf;
@@ -87,6 +88,14 @@ namespace diplom
         {
             SelectProf = new SelectProf();
             SelectProf.ShowDialog();
+        }
+
+       
+
+        private void SelectCom_Click_2(object sender, RoutedEventArgs e)
+        {
+            ComPort = new Com();
+            ComPort.ShowDialog();
         }
     }
 }
