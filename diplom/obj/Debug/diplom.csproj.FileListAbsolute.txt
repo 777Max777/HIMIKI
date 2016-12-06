@@ -37,3 +37,7 @@ C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\SelectProf.g.cs
 C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\SelectProf.baml
 C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\Com.g.cs
 C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\Com.baml
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\GeoIzmer.g.cs
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\NewIzmerenie.g.cs
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\GeoIzmer.baml
+C:\Users\Александр\Desktop\GitHub\diplom\obj\Debug\NewIzmerenie.baml

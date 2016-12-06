@@ -83,7 +83,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Button x:Name="button" Content="Ввести данные" Margin="6,0,9,3" FontFamily="Gabriola" FontSize="20" Click="button_Click"/>
-                    <DataGrid x:Name="dataGrid" Margin="1,0,2,1" SelectionChanged="dataGrid_SelectionChanged" Grid.Row="1" Grid.ColumnSpan="3"/>
+                    <DataGrid x:Name="dataGrid" Margin="1,0,2,-36" SelectionChanged="dataGrid_SelectionChanged" Grid.Row="1" Grid.ColumnSpan="3"/>
 
 
                 </Grid>

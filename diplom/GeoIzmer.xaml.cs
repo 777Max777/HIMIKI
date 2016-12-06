@@ -15,20 +15,13 @@ using System.Windows.Shapes;
 namespace diplom
 {
     /// <summary>
-    /// Логика взаимодействия для SelectProf.xaml
+    /// Логика взаимодействия для GeoIzmer.xaml
     /// </summary>
-    public partial class SelectProf : Window
+    public partial class GeoIzmer : Window
     {
-        private NewIzmerenie Izmerenie;
-        public SelectProf()
+        public GeoIzmer()
         {
             InitializeComponent();
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            Izmerenie = new NewIzmerenie();
-            Izmerenie.ShowDialog();
         }
     }
 }
