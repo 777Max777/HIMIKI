@@ -7,23 +7,49 @@
         Title="Электронный нос"
         Width="799"
         Height="556.452"
-        mc:Ignorable="d"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        mc:Ignorable="d">
     <Grid Margin="0,0,-5,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="31*"/>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="31*" />
 
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="196*"  />
+            <ColumnDefinition Width="196*" />
             <ColumnDefinition Width="289*" />
             <ColumnDefinition Width="302*" />
-            <ColumnDefinition Width="6*"  />
+            <ColumnDefinition Width="6*" />
         </Grid.ColumnDefinitions>
-        <TreeView Name="Tree_Categories" Margin="10" Grid.Row="1" Grid.RowSpan="2"  >
+        <Menu x:Name="menu"
+              Grid.ColumnSpan="3"
+              Height="23"
+              VerticalAlignment="Top">
+            <MenuItem Grid.Row="1"
+                      Click="MenuItem_Click"
+                      Header="Фаил">
+                <MenuItem Header="Соединить с базой данных " />
+                <MenuItem Header="Печать" />
+                <MenuItem Header="Экспорт" />
+                <MenuItem Header="Выход" />
+            </MenuItem>
+
+            <MenuItem Header="Сервис">
+                <MenuItem Click="CreateProf_Click1" Header="Создать профиль" />
+                <MenuItem Header="Настройка профиля" />
+                <MenuItem Header="Настройка сенсоров" />
+                <MenuItem Click="SelectCom_Click_2" Header="Настройка COM-порта" />
+            </MenuItem>
+            <MenuItem Header="Измерение">
+                <MenuItem Click="MenuItem_Click_1" Header="Добавить измерение" />
+            </MenuItem>
+        </Menu>
+        <TreeView Name="Tree_Categories"
+                  Grid.Row="1"
+                  Grid.RowSpan="2"
+                  Margin="10">
             <TreeViewItem Header="Природная вода">
                 <TreeViewItem Header="Снеговая" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
                 <TreeViewItem Header="Осадки" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
@@ -45,53 +71,47 @@
                 <TreeViewItem Header="Родник" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
             </TreeViewItem>
         </TreeView>
-        <Menu x:Name="menu" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="3" >
-            <MenuItem Header="Фаил" Grid.Row="1" Click="MenuItem_Click">
-                <MenuItem Header="Соединить с базой данных "/>
-                <MenuItem Header="Печать"/>
-                <MenuItem Header="Экспорт"/>
-                <MenuItem Header="Выход"/>
-            </MenuItem>
-
-            <MenuItem Header="Сервис">
-                <MenuItem Header="Создать профиль" Click="CreateProf_Click1"/>
-                <MenuItem Header="Настройка профиля"/>
-                <MenuItem Header="Настройка сенсоров"/>
-                <MenuItem Header="Настройка COM-порта" Click="SelectCom_Click_2"/>
-            </MenuItem>
-
-            <MenuItem Header="Измерение">
-                <MenuItem Header="Добавить измерение" Click="MenuItem_Click_1"/>
-            </MenuItem>
-
-
-        </Menu>
-
-        <TabControl x:Name="tabControl" Grid.Column="1"  Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="0,10,4,10">
+        <TabControl x:Name="tabControl"
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Margin="0,10,4,10">
             <TabItem Header="Данные">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-1,-3">
+                <Grid Margin="0,0,-1,-3" Background="#FFE5E5E5">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" MinHeight="37"/>
-                        <RowDefinition Height="371" MinHeight="371"/>
-
+                        <RowDefinition Height="auto" MinHeight="37" />
+                        <RowDefinition Height="*" MinHeight="371" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="171"/>
-                        <ColumnDefinition Width="auto" MinWidth="400"/>
-                        <ColumnDefinition/>
-
+                        <ColumnDefinition Width="86" />
+                        <ColumnDefinition Width="auto" MinWidth="429" />
+                        <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-
-                    <Button x:Name="button" Content="Ввести данные" Margin="6,0,9,3" FontFamily="Gabriola" FontSize="20" Click="button_Click"/>
-                    <DataGrid x:Name="dataGrid" Margin="1,0,2,-36" SelectionChanged="dataGrid_SelectionChanged" Grid.Row="1" Grid.ColumnSpan="3"/>
-
-
+                    <Button x:Name="button"
+                            Grid.Column="1"
+                            Height="39"
+                            Margin="107,1,130,0"
+                            VerticalAlignment="Top"
+                            Click="button_Click"
+                            Content="Ввести данные"
+                            FontFamily="Gabriola"
+                            FontSize="20" />
+                    <DataGrid x:Name="dataGrid"
+                              Grid.Row="1"
+                              Grid.ColumnSpan="3"
+                              Margin="0,4,3,-27"
+                              SelectionChanged="dataGrid_SelectionChanged" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Карта">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Left" Width="571" Height="391" VerticalAlignment="Top"/>
+            <TabItem Header="Карта" Loaded="TabItem_Loaded">
+                <Grid Margin="0,0,2,0" Background="#FFE5E5E5">
+                    <WebBrowser Name="web"
+                                Margin="10"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch" />
+                </Grid>
             </TabItem>
         </TabControl>
-
     </Grid>
 </Window>

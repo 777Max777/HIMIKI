@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Web;
+using System.IO;
 
 
 namespace diplom
@@ -96,6 +98,19 @@ namespace diplom
         {
             ComPort = new Com();
             ComPort.ShowDialog();
+        }
+
+        private void TabItem_Loaded(object sender, RoutedEventArgs e)
+        {
+            string curDir = Directory.GetCurrentDirectory();
+            try
+            {
+                this.web.Navigate(new Uri(String.Format("file:///{0}/test.html", curDir)));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
