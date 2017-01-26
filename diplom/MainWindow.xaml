@@ -5,15 +5,15 @@
         xmlns:local="clr-namespace:diplom"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="Электронный нос"
-        Width="799"
-        Height="556.452"
+        Width="1178.5"
+        Height="763.952"
         WindowState="Maximized"
         mc:Ignorable="d">
     <Grid Margin="0,0,-5,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="31*" />
+            <RowDefinition Height="105*" />
+            <RowDefinition Height="34*" />
+            <RowDefinition Height="594*" />
 
         </Grid.RowDefinitions>
 
@@ -46,14 +46,72 @@
                 <MenuItem Click="MenuItem_Click_1" Header="Добавить измерение" />
             </MenuItem>
         </Menu>
+        <Button x:Name="button"
+                Width="107"
+                Height="20"
+                Margin="10,28,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="button_Click_1"
+                Content="Добавить группу" />
+        <Button x:Name="button1"
+                Width="107"
+                Height="20"
+                Margin="10,53,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="button1_Click"
+                Content="Удалить группу" />
+        <Button x:Name="button2"
+                Width="99"
+                Height="20"
+                Margin="122,28,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Добавить пробу" />
+        <Button x:Name="button3"
+                Width="99"
+                Height="20"
+                Margin="122,53,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Удалить пробу" />
+        <TextBox x:Name="textBox"
+                 Width="211"
+                 Height="23"
+                 Margin="10,78,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Text=""
+                 TextWrapping="Wrap" />
+        <Button x:Name="button4"
+                Grid.ColumnSpan="2"
+                Width="100"
+                Height="20"
+                Margin="226,79,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="button4_Click"
+                Content="Переименовать" />
+
         <TreeView Name="Tree_Categories"
                   Grid.Row="1"
                   Grid.RowSpan="2"
                   Margin="10">
             <TreeViewItem Header="Природная вода">
-                <TreeViewItem Header="Снеговая" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
-                <TreeViewItem Header="Осадки" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
-                <TreeViewItem Header="Речная" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
+                <TreeViewItem Header="Снеговая" MouseDoubleClick="Tree_Categories_MouseDoubleClick">
+                    <TreeViewItem Header="Проба 1 (Воронеж)" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
+                    <TreeViewItem Header="Проба 2 (Воронежская обл - пос.Каменка)" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
+                    <TreeViewItem Header="Проба 3 (Воронежская обл - Репьёвка)" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
+                </TreeViewItem>
+                <TreeViewItem Header="Осадки" MouseDoubleClick="Tree_Categories_MouseDoubleClick">
+                    <TreeViewItem Header="Проба 73 - Семилуки" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
+                    <TreeViewItem Header="Проба 96 - Машмет" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
+                    <TreeViewItem Header="Проба 69" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
+                </TreeViewItem>
+                <TreeViewItem Header="Речная" MouseDoubleClick="Tree_Categories_MouseDoubleClick">
+                    <TreeViewItem Header="Воронежское водохранилище" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
+                </TreeViewItem>
                 <TreeViewItem Header="Стоячие водоемы" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
                 <TreeViewItem Header="Морская" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
                 <TreeViewItem Header="Океанская" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
@@ -63,8 +121,12 @@
             <TreeViewItem Header="Сточная вода" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
             <TreeViewItem Header="Питьевая вода">
                 <TreeViewItem Header="Водопровод">
-                    <TreeViewItem Header="Частный" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
-                    <TreeViewItem Header="Городской" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
+                    <TreeViewItem Header="Частный" MouseDoubleClick="Tree_Categories_MouseDoubleClick">
+                        <TreeViewItem Header="Старый дом" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="Городской" MouseDoubleClick="Tree_Categories_MouseDoubleClick">
+                        <TreeViewItem Header="Коминтерновский" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
+                    </TreeViewItem>
                 </TreeViewItem>
                 <TreeViewItem Header="Колонка" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
                 <TreeViewItem Header="Колодец" MouseDoubleClick="Tree_Categories_MouseDoubleClick" />
@@ -78,29 +140,117 @@
                     Grid.ColumnSpan="2"
                     Margin="0,10,4,10">
             <TabItem Header="Данные">
-                <Grid Margin="0,0,-1,-3" Background="#FFE5E5E5">
+                <Grid Margin="0,-1,-1,-2" Background="#FFE5E5E5">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" MinHeight="37" />
-                        <RowDefinition Height="*" MinHeight="371" />
+                        <RowDefinition Height="auto" MinHeight="79" />
+                        <RowDefinition MinHeight="371" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="86" />
-                        <ColumnDefinition Width="auto" MinWidth="429" />
+                        <ColumnDefinition Width="auto" MinWidth="491" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="button"
-                            Grid.Column="1"
-                            Height="39"
-                            Margin="107,1,130,0"
-                            VerticalAlignment="Top"
-                            Click="button_Click"
-                            Content="Ввести данные"
-                            FontFamily="Gabriola"
-                            FontSize="20" />
+                    <Label x:Name="label"
+                           Grid.ColumnSpan="2"
+                           Width="116"
+                           Height="25"
+                           Margin="10,10,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Дата забора пробы" />
+                    <Label x:Name="label1"
+                           Grid.ColumnSpan="2"
+                           Width="116"
+                           Height="26"
+                           Margin="10,40,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Адрес" />
+                    <Label x:Name="data"
+                           Grid.Column="1"
+                           Width="10"
+                           Height="26"
+                           Margin="45,10,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="" />
+                    <Label x:Name="addres"
+                           Grid.Column="1"
+                           Width="10"
+                           Height="26"
+                           Margin="45,40,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="" />
+                    <Label x:Name="label2"
+                           Grid.Column="1"
+                           Width="70"
+                           Height="26"
+                           Margin="233,10,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Вид пробы" />
+                    <Label x:Name="label3"
+                           Grid.Column="1"
+                           Width="64"
+                           Height="26"
+                           Margin="233,40,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Оператор" />
+                    <Label x:Name="vid"
+                           Grid.Column="1"
+                           Width="10"
+                           Height="26"
+                           Margin="308,10,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content=""
+                           RenderTransformOrigin="0.553,0.077" />
+                    <Label x:Name="person"
+                           Grid.Column="1"
+                           Width="10"
+                           Height="26"
+                           Margin="308,40,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="" />
+                    <Label x:Name="label4"
+                           Grid.Column="2"
+                           Width="66"
+                           Height="26"
+                           Margin="10,10,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Категория" />
+                    <Label x:Name="label5"
+                           Grid.Column="2"
+                           Width="82"
+                           Height="26"
+                           Margin="10,40,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="Консервация" />
+                    <Label x:Name="category"
+                           Grid.Column="2"
+                           Width="10"
+                           Height="26"
+                           Margin="87,10,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="" />
+                    <Label x:Name="conserv"
+                           Grid.Column="2"
+                           Width="10"
+                           Height="26"
+                           Margin="92,45,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="" />
                     <DataGrid x:Name="dataGrid"
                               Grid.Row="1"
                               Grid.ColumnSpan="3"
-                              Margin="0,4,3,-27"
+                              Margin="0,0,3,10"
                               SelectionChanged="dataGrid_SelectionChanged" />
                 </Grid>
             </TabItem>

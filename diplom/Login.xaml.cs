@@ -28,8 +28,9 @@ namespace diplom
         {
             InitializeComponent();
             textBox.Text = "LIHOTIN";
-            textBox1.Text = "ENose";
-            textBox2.Text = "test";
+            textBox1.Text = "MyNose";
+            textBox2.Text = "admin";
+            textBox3.Text = "admin";
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

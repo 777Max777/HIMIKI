@@ -8,19 +8,7 @@ function initialize(value) {
         center: latlng
     }
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-    codeAddress()
-    /*var address = document.getElementById('address').value;
-
-    var autocomplete = new google.maps.places.Autocomplete(input);
-    autocomplete.bindTo('bounds', map);
-    var place = autocomplete.getPlace();
-
-    var input = /** @type {!HTMLInputElement} (
-      document.getElementById('address'));
-
-    alert(place);
-    search(address);*/
+    codeAddress();
 }
 
 function codeAddressMy(value) {
@@ -35,33 +23,6 @@ function codeAddressMy(value) {
         }
     });
 }
-
-/*function search() {
-    var address = document.getElementById('address').value;
-    codeAddress(address, function (location) {
-        //document.getElementById('output').innerHTML = location[0];
-        alert(location[0]);
-    });
-}*/
-
-/*function codeAddress(address, callback) {
-    //var address = document.getElementById('address').value;
-    var data=[];
-    geocoder.geocode({ 'address': address }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            map.setCenter(results[0].geometry.location);
-            var lat = results[0].geometry.location.lat();
-            var lon = results[0].geometry.location.lng();            
-            location = new Array(lat, lon);
-            callback(location);
-        } else {
-            alert("Geocode was not successful for the following reason: " + status);
-        }
-    });
-    var html = 'Долгота: '+ data[0];
-    document.getElementById("output").value = data[0];
-    //alert(data[0]+","+data[1]);
-}*/
 
 function codeAddress() {
     var address = document.getElementById("address").value;
@@ -96,10 +57,9 @@ function codeAddress() {
     });
 }
 
-   
-/*function search(value) {        
-    //var geocoder = new GClientGeocoder();
-    //geocoder.setBaseCountryCode("en");
+   /* geocoder.setBaseCountryCode("en");
+    function search(value) {
+        var geocoder = new GClientGeocoder();
         if (value != null) {
             geocoder.getLatLng(value, function (point) {
                 if (!point) {
@@ -123,6 +83,7 @@ function codeAddress() {
                 }
             })
         }
-        alert (data);
+        return data;
     }
-*/
+
+}*/

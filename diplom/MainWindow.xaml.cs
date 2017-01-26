@@ -18,6 +18,7 @@ using System.Web;
 using System.IO;
 
 
+
 namespace diplom
 {
     /// <summary>
@@ -37,25 +38,27 @@ namespace diplom
         private CreateProf Prof;
         private Login logwin;
         private SelectProf SelectProf;
+
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
-        public void updateTable()
+        public void updateTable(string str, DataGrid myDataGrid)
         {
             using (DataTable dt = new DataTable())
             {
                 using (SqlConnection conn = new SqlConnection(Data.value))
                 {
-                    using (SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Type_water ORDER BY id_type ASC", conn))
+                    using (SqlDataAdapter da = new SqlDataAdapter(str, conn))
                     {
                         da.Fill(dt);
                     }
                 }
-                dataGrid.ItemsSource = dt.DefaultView;
-                dataGrid.AutoGenerateColumns = true;
-                dataGrid.CanUserAddRows = false;
+                myDataGrid.ItemsSource = dt.DefaultView;
+                myDataGrid.AutoGenerateColumns = true;
+                myDataGrid.CanUserAddRows = false;
             }
         }
 
@@ -72,7 +75,9 @@ namespace diplom
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            updateTable();
+            //updateTable();
+            
+
         }
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -85,6 +90,7 @@ namespace diplom
             Prof = new CreateProf();
             Prof.ShowDialog();
         }
+
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
@@ -112,5 +118,25 @@ namespace diplom
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button_Click_1(object sender, RoutedEventArgs e)
+        {
+            TreeViewItem item = new TreeViewItem();
+            item.Header = "новая группа(проба)";            
+            Tree_Categories.Items.Add(item);
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Tree_Categories.Items.Remove(Tree_Categories.SelectedItem);
+        }
+
+
+
+        //переименовываем группу или пробу
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            ((TreeViewItem)(Tree_Categories.SelectedItem)).Header = textBox.Text;
+        }        
     }
 }
