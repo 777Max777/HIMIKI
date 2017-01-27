@@ -35,7 +35,8 @@
                 Margin="184,89,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Content="Редактировать" Click="button_Click" />
+                Click="button_Click"
+                Content="Редактировать" />
         <ComboBox x:Name="comboBox2"
                   Width="271"
                   Margin="10,136,0,0"
@@ -138,7 +139,7 @@
         <TextBox x:Name="textBox3"
                  Width="250"
                  Height="23"
-                 Margin="325,240,0,0"
+                 Margin="325,35,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Text=""
@@ -146,7 +147,7 @@
         <TextBox x:Name="textBox4"
                  Width="250"
                  Height="23"
-                 Margin="325,190,0,0"
+                 Margin="325,89,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Text=""
@@ -162,7 +163,7 @@
         <TextBox x:Name="textBox6"
                  Width="250"
                  Height="23"
-                 Margin="325,87,0,0"
+                 Margin="325,190,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Text=""
@@ -170,7 +171,7 @@
         <TextBox x:Name="textBox7"
                  Width="250"
                  Height="23"
-                 Margin="325,36,0,0"
+                 Margin="325,240,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Text=""
@@ -181,6 +182,7 @@
                 Margin="253,323,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
+                Click="button3_Click"
                 Content="Выбрать на карте" />
         <TextBox x:Name="textBox8"
                  Width="190"
@@ -191,12 +193,12 @@
                  Text=""
                  TextWrapping="Wrap" />
         <Label x:Name="label11"
-               Margin="10,338,0,0"
+               Margin="385,338,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="Долгота" />
         <Label x:Name="label12"
-               Margin="385,338,0,0"
+               Margin="10,335,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="Широта" />
@@ -213,14 +215,23 @@
                 Margin="441,274,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Content="Получить координаты" Click="button4_Click" />
+                Click="button4_Click"
+                Content="Получить координаты" />
         <Button x:Name="button_Copy"
-            Width="97"
-            Height="22"
-            Margin="184,36,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Редактировать" Click="button_Click1" />
+                Width="97"
+                Height="22"
+                Margin="184,36,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="button_Click1"
+                Content="Редактировать" />
+        <Button x:Name="button5"
+                Width="134"
+                Margin="441,297,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="button5_Click"
+                Content="Проверить на карте" />
 
     </Grid>
 </Window>

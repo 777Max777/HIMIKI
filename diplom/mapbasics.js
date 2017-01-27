@@ -9,7 +9,6 @@ function initialize(value) {
     }
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-    codeAddress()
     /*var address = document.getElementById('address').value;
 
     var autocomplete = new google.maps.places.Autocomplete(input);
