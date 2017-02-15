@@ -44,6 +44,7 @@
             </MenuItem>
             <MenuItem Header="Измерение">
                 <MenuItem Click="MenuItem_Click_1" Header="Добавить измерение" />
+                <MenuItem Click="MenuItem_Click_2" Header="Добавить новую пробу" />
             </MenuItem>
         </Menu>
         <Button x:Name="button"

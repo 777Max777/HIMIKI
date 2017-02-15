@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace diplom
 {
@@ -26,9 +27,16 @@ namespace diplom
         {
             InitializeComponent();
             talk = flag;
+            MyLinqDataContext dbContex = new MyLinqDataContext();
             if (flag == 0)
-            {
-                SqlConnection sqlConnection1 = new SqlConnection(Data.value);
+            {   
+               var reader = (from type in dbContex.type select type.Название).ToArray();
+               foreach(var curr in reader)
+                {
+                    comboBox.Items.Add(curr);
+                    comboBox1.Items.Add(curr);
+                }
+                /*SqlConnection sqlConnection1 = new SqlConnection(Data.value);
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.CommandText = "SELECT Название FROM type";
@@ -43,11 +51,11 @@ namespace diplom
                         comboBox.Items.Add((string)reader.GetValue(0));
                         comboBox1.Items.Add((string)reader.GetValue(0));
                     }
-                sqlConnection1.Close();
+                sqlConnection1.Close();*/
             }
             if (flag == 1)
             {
-                SqlConnection sqlConnection1 = new SqlConnection(Data.value);
+                /*SqlConnection sqlConnection1 = new SqlConnection(Data.value);
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.CommandText = "SELECT Название FROM Category";
@@ -62,13 +70,25 @@ namespace diplom
                         comboBox.Items.Add((string)reader.GetValue(0));
                         comboBox1.Items.Add((string)reader.GetValue(0));
                     }
-                sqlConnection1.Close();
+                sqlConnection1.Close();*/
+
+                var reader = (from Category in dbContex.type select Category.Название).ToArray();
+                foreach (var curr in reader)
+                {
+                    comboBox.Items.Add(curr);
+                    comboBox1.Items.Add(curr);
+                }
             }
         }
       
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            if(textBox.Text == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Нужно задать имя");
+                return;
+            }
             SqlConnection con = new SqlConnection(Data.value);
             if (talk == 0)
             {               
@@ -89,17 +109,9 @@ namespace diplom
             }
             if(talk == 1)
             {
-                string query = "INSERT INTO type (Название) VALUES(@Name)";
+                string query = "INSERT INTO Category (Название) VALUES(@Name)";
                 con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
-                /*SqlCommand cmd2 = new SqlCommand("SELECT COUNT(*) FROM Category", con);
-                int count = 1;
-                using (var reader = cmd2.ExecuteReader())
-                    while (reader.Read())
-                    {
-                        count += (int)reader.GetValue(0);
-                    }
-                cmd.Parameters.AddWithValue("@ID", count);*/
                 cmd.Parameters.AddWithValue("@Name", textBox.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -112,8 +124,17 @@ namespace diplom
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection con = new SqlConnection(Data.value);
-            string name = comboBox.SelectedItem.ToString();
+            string name;
+            try
+            {
+               name = comboBox.SelectedItem.ToString();
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Нужно указать что удалить хочешь");
+                return;
+            }
+            SqlConnection con = new SqlConnection(Data.value);            
             string query = "";
             if (talk == 0)
             {
@@ -134,8 +155,23 @@ namespace diplom
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection con = new SqlConnection(Data.value);
-            string name = comboBox1.SelectedItem.ToString();
+            string name;
+            try
+            {
+                name = comboBox1.SelectedItem.ToString();
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("Нужно выбрать необходимый параметр");
+                return;
+            }
+            if (textBox_Copy.Text == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Нужно задать необходимые параметры");
+                return;
+            }
+
+            SqlConnection con = new SqlConnection(Data.value);                        
             string query = "";
             if (talk == 0)
             {

@@ -38,6 +38,7 @@ namespace diplom
         private CreateProf Prof;
         private Login logwin;
         private SelectProf SelectProf;
+        private NewIzmerenie NewIz;
 
         public MainWindow()
         {
@@ -137,6 +138,12 @@ namespace diplom
         private void button4_Click(object sender, RoutedEventArgs e)
         {
             ((TreeViewItem)(Tree_Categories.SelectedItem)).Header = textBox.Text;
-        }        
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            NewIz = new NewIzmerenie();
+            NewIz.ShowDialog();
+        }
     }
 }

@@ -6,72 +6,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="Новое измерение"
         Width="604.609"
-        Height="461.248"
+        Height="508.248"
         mc:Ignorable="d">
     <Grid>
         <ComboBox x:Name="comboBox"
-                  Width="169"
-                  Margin="10,90,0,0"
-                  HorizontalAlignment="Left"
+                  Margin="8,132,415,0"
                   VerticalAlignment="Top" />
         <Label x:Name="label"
-               Margin="10,10,0,0"
-               HorizontalAlignment="Left"
+               Margin="8,52,0,0"
                VerticalAlignment="Top"
-               Content="Тип измерения" />
+               Content="Тип измерения" HorizontalAlignment="Left" Width="96" />
         <Label x:Name="label1"
-               Margin="10,63,0,0"
+               Margin="8,105,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Content="Выберите категорию" />
+               Content="Выберите категорию" Width="129" />
         <ComboBox x:Name="comboBox1"
-                  Width="169"
-                  Margin="10,36,0,0"
-                  HorizontalAlignment="Left"
+                  Margin="8,78,415,0"
                   VerticalAlignment="Top" />
         <Button x:Name="button"
-                Width="97"
                 Height="22"
-                Margin="184,89,0,0"
-                HorizontalAlignment="Left"
+                Margin="0,131,311,0"
                 VerticalAlignment="Top"
                 Click="button_Click"
-                Content="Редактировать" />
+                Content="Редактировать" HorizontalAlignment="Right" Width="100" />
         <ComboBox x:Name="comboBox2"
-                  Width="271"
-                  Margin="10,136,0,0"
-                  HorizontalAlignment="Left"
+                  Margin="8,178,311,0"
                   VerticalAlignment="Top">
             <ComboBoxItem Content="Да" />
             <ComboBoxItem Content="Нет" />
         </ComboBox>
         <TextBox x:Name="textBox"
-                 Width="271"
+                 Width="278"
                  Height="23"
-                 Margin="10,190,0,0"
+                 Margin="8,232,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  TextWrapping="Wrap" />
         <TextBox x:Name="textBox1"
-                 Width="271"
+                 Width="278"
                  Height="23"
-                 Margin="10,240,0,0"
+                 Margin="8,282,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  TextWrapping="Wrap" />
         <Label x:Name="label2"
-               Margin="10,110,0,0"
+               Margin="8,152,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Content="Консервация" />
+               Content="Консервация" Width="84" />
         <Label x:Name="label3"
-               Margin="10,164,0,0"
+               Margin="8,206,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Content="Объем пробы" />
+               Content="Объем пробы" Width="90" />
         <Label x:Name="label4"
-               Width="86"
-               Margin="9,213,0,0"
+               Width="88"
+               Margin="8,255,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="Имя пробы"
@@ -79,7 +70,7 @@
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform />
-                    <SkewTransform AngleX="-2.045" />
+                    <SkewTransform AngleX="-2.092" />
                     <RotateTransform />
                     <TranslateTransform X="-0.464" />
                 </TransformGroup>
@@ -99,139 +90,135 @@
                 VerticalAlignment="Bottom"
                 Content="Отмена" />
         <Label x:Name="label5"
-               Margin="10,263,0,0"
+               Margin="8,305,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Content="Дата забора" />
+               Content="Дата забора" Width="79" />
         <TextBox x:Name="textBox2"
-                 Width="271"
+                 Width="278"
                  Height="23"
-                 Margin="10,289,0,0"
+                 Margin="8,331,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Text=""
                  TextWrapping="Wrap" />
         <Label x:Name="label6"
-               Margin="325,10,0,0"
+               Margin="331,52,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Content="Страна" />
+               Content="Страна" Width="50" />
         <Label x:Name="label7"
-               Margin="325,61,0,0"
+               Margin="331,103,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Content="Регион" />
+               Content="Регион" Width="50" />
         <Label x:Name="label8"
-               Margin="325,164,0,0"
+               Margin="331,206,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Content="Улица" />
+               Content="Улица" Width="44" />
         <Label x:Name="label9"
-               Margin="325,213,0,0"
+               Margin="331,255,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Content="Дом" />
+               Content="Дом" Width="35" />
         <Label x:Name="label10"
-               Margin="325,110,0,0"
+               Margin="331,152,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Content="Город/населённый пункт" />
+               Content="Город/населённый пункт" Width="153" />
         <TextBox x:Name="textBox3"
-                 Width="250"
+                 Width="256"
                  Height="23"
-                 Margin="325,35,0,0"
+                 Margin="331,77,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Text=""
                  TextWrapping="Wrap" />
         <TextBox x:Name="textBox4"
-                 Width="250"
+                 Width="256"
                  Height="23"
-                 Margin="325,89,0,0"
+                 Margin="331,131,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Text=""
                  TextWrapping="Wrap" />
         <TextBox x:Name="textBox5"
-                 Width="250"
+                 Width="256"
                  Height="23"
-                 Margin="325,136,0,0"
+                 Margin="331,178,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Text=""
                  TextWrapping="Wrap" />
         <TextBox x:Name="textBox6"
-                 Width="250"
+                 Width="256"
                  Height="23"
-                 Margin="325,190,0,0"
+                 Margin="331,232,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Text=""
                  TextWrapping="Wrap" />
         <TextBox x:Name="textBox7"
-                 Width="250"
+                 Width="256"
                  Height="23"
-                 Margin="325,240,0,0"
+                 Margin="331,282,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Text=""
                  TextWrapping="Wrap" />
         <Button x:Name="button3"
-                Width="106"
+                Width="108"
                 Height="30"
-                Margin="253,323,0,0"
+                Margin="258,365,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Click="button3_Click"
                 Content="Выбрать на карте" />
         <TextBox x:Name="textBox8"
-                 Width="190"
-                 Height="23"
-                 Margin="10,364,0,0"
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
+                 Margin="8,406,395,0"
                  Text=""
-                 TextWrapping="Wrap" />
+                 TextWrapping="Wrap" Height="23" VerticalAlignment="Top" />
         <Label x:Name="label11"
-               Margin="385,338,0,0"
+               Margin="393,380,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Content="Долгота" />
+               Content="Долгота" Width="55" />
         <Label x:Name="label12"
-               Margin="10,335,0,0"
+               Margin="8,377,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Content="Широта" />
+               Content="Широта" Width="54" />
         <TextBox x:Name="textBox9"
-                 Width="190"
+                 Width="194"
                  Height="23"
-                 Margin="385,364,0,0"
+                 Margin="393,406,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  Text=""
                  TextWrapping="Wrap" />
         <Button x:Name="button4"
-                Width="134"
-                Margin="441,274,0,0"
+                Width="137"
+                Margin="450,316,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Click="button4_Click"
                 Content="Получить координаты" />
         <Button x:Name="button_Copy"
-                Width="97"
                 Height="22"
-                Margin="184,36,0,0"
-                HorizontalAlignment="Left"
+                Margin="0,78,311,0"
                 VerticalAlignment="Top"
                 Click="button_Click1"
-                Content="Редактировать" />
+                Content="Редактировать" HorizontalAlignment="Right" Width="100" />
         <Button x:Name="button5"
-                Width="134"
-                Margin="441,297,0,0"
+                Width="137"
+                Margin="450,339,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Click="button5_Click"
                 Content="Проверить на карте" />
+        <Label x:Name="label13" Content="Название пробы" Margin="149,10,0,0" HorizontalAlignment="Left" Width="104" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox10" Margin="258,10,174,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

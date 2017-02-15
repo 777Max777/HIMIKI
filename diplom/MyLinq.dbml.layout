@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MyLinq">
+  <DataContextMoniker Name="/MyLinqDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c109f7e2-e9ed-45cb-b65f-6b4088df59d8" absoluteBounds="0.5, 3.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/MyLinqDataContext/Addres" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3181d96b-85fd-42c9-9108-8d4b171cd012" absoluteBounds="0.515, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="03bbb1af-d9a5-4046-a4de-6892f0876c32" absoluteBounds="0.5, 0.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/MyLinqDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d44d127a-1ebf-45b8-be66-aa81944bbf5a" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8f801358-510e-4ae1-a6f0-27b1886bf0a5" absoluteBounds="8.125, 2.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/MyLinqDataContext/Indicate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="714bb7d5-86bb-4c1e-a609-1682d39e6de4" absoluteBounds="8.14, 3.2100000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="760b486c-12b1-4fbe-b20b-a7fd8ef17093" absoluteBounds="3.625, 3.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MyLinqDataContext/Person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="78301b32-a273-4ca6-b2f6-8ba5b1eca9fd" absoluteBounds="3.6400000000000006, 4.0850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="871c9cf5-f409-48be-a586-b3afe7d9009c" absoluteBounds="5.875, 1, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/MyLinqDataContext/Prob_Indicate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f36bc67c-2dc5-4c47-abd0-f1998190d425" absoluteBounds="5.89, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="571762f8-ac82-405b-8921-4025effd82cb" absoluteBounds="3.5, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/MyLinqDataContext/Prob_water" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f5a692b-4efc-4316-8fed-e0f91d3da884" absoluteBounds="3.515, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4c0d6fac-5466-4637-bef7-98df0510e202" absoluteBounds="8, 5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MyLinqDataContext/Profile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d98e96e-f95f-40e8-bb2f-a84b140833d9" absoluteBounds="8.015, 5.4600000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0d0c7b9-6448-4a4e-a29a-7bf6c824c7e0" absoluteBounds="5.875, 2.625, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/MyLinqDataContext/Sensor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ffa564d7-68c0-4e33-b552-90032a9913db" absoluteBounds="5.8900000000000006, 3.0850000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2be64006-802c-4bba-a99b-3c302ff7c761" absoluteBounds="8.125, 1, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/MyLinqDataContext/Sensor_Indicate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8c510d7-f4b9-4901-9b7d-11cc7471a961" absoluteBounds="8.14, 1.4600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93c05313-590c-46c8-a70b-624ac09d2c69" absoluteBounds="0.875, 4.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/MyLinqDataContext/Sensor_Profile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3abb9694-7e88-48f3-a410-0cf91da062d4" absoluteBounds="0.89000000000000057, 5.2100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="439955ca-fe12-417e-815e-1c3811e09e34" absoluteBounds="0.5, 1.875, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/MyLinqDataContext/type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ba992f4-15e4-410e-9b9c-7b91455d50ee" absoluteBounds="0.515, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 1.69314697265625); (5.875 : 1.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyLinqDataContext/Prob_water/Prob_water_Prob_Indicate" />
+      <nodes>
+        <classShapeMoniker Id="571762f8-ac82-405b-8921-4025effd82cb" />
+        <classShapeMoniker Id="871c9cf5-f409-48be-a586-b3afe7d9009c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 3.25); (2.875 : 2.875); (2.875 : 3.60740397135417); (3.125 : 3.60740397135417); (3.5 : 3.23240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyLinqDataContext/Addres/Addres_Prob_water" />
+      <nodes>
+        <classShapeMoniker Id="c109f7e2-e9ed-45cb-b65f-6b4088df59d8" />
+        <classShapeMoniker Id="571762f8-ac82-405b-8921-4025effd82cb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 1.09699625651042); (3.5 : 1.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyLinqDataContext/Category/Category_Prob_water" />
+      <nodes>
+        <classShapeMoniker Id="03bbb1af-d9a5-4046-a4de-6892f0876c32" />
+        <classShapeMoniker Id="571762f8-ac82-405b-8921-4025effd82cb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.125 : 1.59699625651042); (7.875 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyLinqDataContext/Sensor_Indicate/Sensor_Indicate_Prob_Indicate" />
+      <nodes>
+        <classShapeMoniker Id="2be64006-802c-4bba-a99b-3c302ff7c761" />
+        <classShapeMoniker Id="871c9cf5-f409-48be-a586-b3afe7d9009c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.125 : 2.75); (9.125 : 2.19399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyLinqDataContext/Indicate/Indicate_Sensor_Indicate" />
+      <nodes>
+        <classShapeMoniker Id="8f801358-510e-4ae1-a6f0-27b1886bf0a5" />
+        <classShapeMoniker Id="2be64006-802c-4bba-a99b-3c302ff7c761" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.875 : 2.625); (8.125 : 2.19399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MyLinqDataContext/Sensor/Sensor_Sensor_Indicate" />
+      <nodes>
+        <classShapeMoniker Id="d0d0c7b9-6448-4a4e-a29a-7bf6c824c7e0" />
+        <classShapeMoniker Id="2be64006-802c-4bba-a99b-3c302ff7c761" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.625 : 4.97679768880208); (2.875 : 4.97679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyLinqDataContext/Person/Person_Sensor_Profile" />
+      <nodes>
+        <classShapeMoniker Id="760b486c-12b1-4fbe-b20b-a7fd8ef17093" />
+        <classShapeMoniker Id="93c05313-590c-46c8-a70b-624ac09d2c69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8 : 5.70119466145833); (2.875 : 5.70119466145833)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyLinqDataContext/Profile/Profile_Sensor_Profile" />
+      <nodes>
+        <classShapeMoniker Id="4c0d6fac-5466-4637-bef7-98df0510e202" />
+        <classShapeMoniker Id="93c05313-590c-46c8-a70b-624ac09d2c69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.875 : 4.0112939453125); (6.875 : 5.45239251953125); (2.875 : 5.45239251953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyLinqDataContext/Sensor/Sensor_Sensor_Profile" />
+      <nodes>
+        <classShapeMoniker Id="d0d0c7b9-6448-4a4e-a29a-7bf6c824c7e0" />
+        <classShapeMoniker Id="93c05313-590c-46c8-a70b-624ac09d2c69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 2.47199625651042); (3.5 : 2.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyLinqDataContext/type/type_Prob_water" />
+      <nodes>
+        <classShapeMoniker Id="439955ca-fe12-417e-815e-1c3811e09e34" />
+        <classShapeMoniker Id="571762f8-ac82-405b-8921-4025effd82cb" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

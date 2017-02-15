@@ -28,7 +28,7 @@ namespace diplom
         {
             InitializeComponent();
             textBox.Text = "LIHOTIN";
-            textBox1.Text = "MyNose";
+            textBox1.Text = "MyNose1";
             textBox2.Text = "admin";
             textBox3.Text = "admin";
         }

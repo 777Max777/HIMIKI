@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyNose1" Class="MyLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LIHOTIN;Initial Catalog=MyNose1;Integrated Security=True" SettingsObjectName="diplom.Properties.Settings" SettingsPropertyName="MyNose1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Addres" Member="Addres">
+    <Type Name="Addres">
+      <Column Name="id_Address" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Широта" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Долгота" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Addres_Prob_water" Member="Prob_water" ThisKey="id_Address" OtherKey="id_Address" Type="Prob_water" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="Category">
+    <Type Name="Category">
+      <Column Name="id_categ" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Название" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Category_Prob_water" Member="Prob_water" ThisKey="id_categ" OtherKey="id_categ" Type="Prob_water" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Indicate" Member="Indicate">
+    <Type Name="Indicate">
+      <Column Name="Название" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Аббревиатура" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ГОСТ" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Min_значение" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Max_значение" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id_Indicate" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="Indicate_Sensor_Indicate" Member="Sensor_Indicate" ThisKey="id_Indicate" OtherKey="id_Indicate" Type="Sensor_Indicate" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Person" Member="Person">
+    <Type Name="Person">
+      <Column Name="id_pers" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Фамилия" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Имя" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Отчество" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Person_Sensor_Profile" Member="Sensor_Profile" ThisKey="id_pers" OtherKey="id_pers" Type="Sensor_Profile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Prob_Indicate" Member="Prob_Indicate">
+    <Type Name="Prob_Indicate">
+      <Column Name="Значение" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id_Indicate" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="id_prob" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Prob_water_Prob_Indicate" Member="Prob_water" ThisKey="id_prob" OtherKey="id_prob" Type="Prob_water" IsForeignKey="true" />
+      <Association Name="Sensor_Indicate_Prob_Indicate" Member="Sensor_Indicate" ThisKey="id_Indicate" OtherKey="id_Indicate" Type="Sensor_Indicate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Prob_water" Member="Prob_water">
+    <Type Name="Prob_water">
+      <Column Name="Дата_забора" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Дата_анализа" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Консервация" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Объем" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Название" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Степень_загрязнения" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_prob" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_Address" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="id_type" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="id_categ" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Prob_water_Prob_Indicate" Member="Prob_Indicate" ThisKey="id_prob" OtherKey="id_prob" Type="Prob_Indicate" />
+      <Association Name="Addres_Prob_water" Member="Addres" ThisKey="id_Address" OtherKey="id_Address" Type="Addres" IsForeignKey="true" />
+      <Association Name="Category_Prob_water" Member="Category" ThisKey="id_categ" OtherKey="id_categ" Type="Category" IsForeignKey="true" />
+      <Association Name="type_Prob_water" Member="type" ThisKey="id_type" OtherKey="id_type" Type="type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Profile" Member="Profile">
+    <Type Name="Profile">
+      <Column Name="id_Prof" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Количество_сенсоров" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Название" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Аббревиатура" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Profile_Sensor_Profile" Member="Sensor_Profile" ThisKey="id_Prof" OtherKey="id_Prof" Type="Sensor_Profile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sensor" Member="Sensor">
+    <Type Name="Sensor">
+      <Column Name="id_sensor" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Название" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Аббревиатура" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Sensor_Sensor_Indicate" Member="Sensor_Indicate" ThisKey="id_sensor" OtherKey="id_sensor" Type="Sensor_Indicate" />
+      <Association Name="Sensor_Sensor_Profile" Member="Sensor_Profile" ThisKey="id_sensor" OtherKey="id_sensor" Type="Sensor_Profile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sensor_Indicate" Member="Sensor_Indicate">
+    <Type Name="Sensor_Indicate">
+      <Column Name="id_Indicate" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_sensor" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Sensor_Indicate_Prob_Indicate" Member="Prob_Indicate" ThisKey="id_Indicate" OtherKey="id_Indicate" Type="Prob_Indicate" />
+      <Association Name="Indicate_Sensor_Indicate" Member="Indicate" ThisKey="id_Indicate" OtherKey="id_Indicate" Type="Indicate" IsForeignKey="true" />
+      <Association Name="Sensor_Sensor_Indicate" Member="Sensor" ThisKey="id_sensor" OtherKey="id_sensor" Type="Sensor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sensor_Profile" Member="Sensor_Profile">
+    <Type Name="Sensor_Profile">
+      <Column Name="id_pers" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="id_Prof" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="id_sensor" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Person_Sensor_Profile" Member="Person" ThisKey="id_pers" OtherKey="id_pers" Type="Person" IsForeignKey="true" />
+      <Association Name="Profile_Sensor_Profile" Member="Profile" ThisKey="id_Prof" OtherKey="id_Prof" Type="Profile" IsForeignKey="true" />
+      <Association Name="Sensor_Sensor_Profile" Member="Sensor" ThisKey="id_sensor" OtherKey="id_sensor" Type="Sensor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.type" Member="type">
+    <Type Name="type">
+      <Column Name="id_type" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Название" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="type_Prob_water" Member="Prob_water" ThisKey="id_type" OtherKey="id_type" Type="Prob_water" />
+    </Type>
+  </Table>
+</Database>
