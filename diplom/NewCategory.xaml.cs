@@ -23,11 +23,12 @@ namespace diplom
     public partial class NewCategory : Window
     {
         private int talk;
+        private MyLinqDataContext dbContex;
         public NewCategory(int flag)
         {
             InitializeComponent();
             talk = flag;
-            MyLinqDataContext dbContex = new MyLinqDataContext();
+            dbContex = new MyLinqDataContext();
             if (flag == 0)
             {   
                var reader = (from type in dbContex.type select type.Название).ToArray();
@@ -72,7 +73,7 @@ namespace diplom
                     }
                 sqlConnection1.Close();*/
 
-                var reader = (from Category in dbContex.type select Category.Название).ToArray();
+                var reader = (from Category in dbContex.Category select Category.Название).ToArray();
                 foreach (var curr in reader)
                 {
                     comboBox.Items.Add(curr);
@@ -89,10 +90,23 @@ namespace diplom
                 System.Windows.Forms.MessageBox.Show("Нужно задать имя");
                 return;
             }
-            SqlConnection con = new SqlConnection(Data.value);
+            //SqlConnection con = new SqlConnection(Data.value);
             if (talk == 0)
-            {               
-                string query = "INSERT INTO type (Название) VALUES(@Name)";
+            {
+                type item = new type
+                {
+                    Название = textBox.Text
+                };
+                dbContex.type.InsertOnSubmit(item);
+                try
+                {
+                    dbContex.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                /*string query = "INSERT INTO type (Название) VALUES(@Name)";
                 con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
                 /*SqlCommand cmd2 = new SqlCommand("SELECT COUNT(*) FROM type", con);
@@ -102,19 +116,34 @@ namespace diplom
                     {
                         count += (int)reader.GetValue(0);
                     }*/
-                //cmd.Parameters.AddWithValue("@ID", count);
+                /*cmd.Parameters.AddWithValue("@ID", count);
                 cmd.Parameters.AddWithValue("@Name", textBox.Text);
                 cmd.ExecuteNonQuery();
-                con.Close();                
+                con.Close(); */
+
             }
             if(talk == 1)
             {
-                string query = "INSERT INTO Category (Название) VALUES(@Name)";
+                Category categ = new Category
+                {
+                    Название = textBox.Text
+                };
+                dbContex.Category.InsertOnSubmit(categ);
+                // Submit the change to the database.
+                try
+                {
+                    dbContex.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                /*string query = "INSERT INTO Category (Название) VALUES(@Name)";
                 con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Name", textBox.Text);
                 cmd.ExecuteNonQuery();
-                con.Close();
+                con.Close();*/
             }
 
             comboBox.Items.Add(textBox.Text);
@@ -133,21 +162,47 @@ namespace diplom
             {
                 System.Windows.Forms.MessageBox.Show("Нужно указать что удалить хочешь");
                 return;
-            }
-            SqlConnection con = new SqlConnection(Data.value);            
-            string query = "";
+            }    
+            /**SqlConnection con = new SqlConnection(Data.value);            
+            string query = "";*/
             if (talk == 0)
             {
-                query = "DELETE FROM type WHERE Название = '" + name + "'";               
+                var deleteitems = from type in dbContex.type where type.Название == name select type;
+                foreach (var items in deleteitems)
+                {
+                    dbContex.type.DeleteOnSubmit(items);
+                }
+                try
+                {
+                    dbContex.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                //query = "DELETE FROM type WHERE Название = '" + name + "'";               
             }
             if(talk == 1)
             {
-                query = "DELETE FROM Category WHERE Название = '" + name + "'";                
+                var deleteitems = from Category in dbContex.Category where Category.Название == name select Category;
+                foreach (var items in deleteitems)
+                {
+                    dbContex.Category.DeleteOnSubmit(items);
+                }
+                try
+                {
+                    dbContex.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                //query = "DELETE FROM Category WHERE Название = '" + name + "'";                
             }
-            con.Open();
+            /*con.Open();
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
-            con.Close();
+            con.Close();*/
 
             comboBox.Items.Remove(name);
             comboBox1.Items.Remove(name);
@@ -171,20 +226,46 @@ namespace diplom
                 return;
             }
 
-            SqlConnection con = new SqlConnection(Data.value);                        
-            string query = "";
+            /*SqlConnection con = new SqlConnection(Data.value);                        
+            string query = "";*/
             if (talk == 0)
             {
-                query = "UPDATE type SET Название = '" + name + "' WHERE Название = '" + textBox_Copy.Text + "'";
+                var UpdateItem = from type in dbContex.type where type.Название == name select type;
+                foreach (type item in UpdateItem)
+                {
+                    item.Название = textBox_Copy.Text;
+                }
+                try
+                {
+                    dbContex.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                //query = "UPDATE type SET Название = '" + name + "' WHERE Название = '" + textBox_Copy.Text + "'";
             }
             if (talk == 1)
             {
-                query = "UPDATE Category SET Название = '" + name + "' WHERE Название = '" + textBox_Copy.Text + "'";
+                var UpdateItem = from Category in dbContex.Category where Category.Название == name select Category;
+                foreach (Category item in UpdateItem)
+                {
+                    item.Название = textBox_Copy.Text;
+                }
+                try
+                {
+                    dbContex.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                //query = "UPDATE Category SET Название = '" + name + "' WHERE Название = '" + textBox_Copy.Text + "'";
             }
-            con.Open();
+            /*con.Open();
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
-            con.Close();
+            con.Close();*/
 
             comboBox.Items.Remove(name);
             comboBox1.Items.Remove(name);

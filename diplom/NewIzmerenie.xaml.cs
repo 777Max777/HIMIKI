@@ -16,6 +16,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Navigation;
+using System.Globalization;
 
 namespace diplom
 {
@@ -27,17 +28,19 @@ namespace diplom
         private NewCategory redact;
         private MapAddress1 test_mark;
         private MapMarker locateProb;
+        private MyLinqDataContext dbContex;
 
         public NewIzmerenie()
         {
             InitializeComponent();
+            dbContex = new MyLinqDataContext();
             updateComBoxTYPE();
             updateComBoxCATEGORY();
         }
 
         private void updateComBoxTYPE()
         {
-            SqlConnection sqlConnection1 = new SqlConnection(Data.value);
+            /*SqlConnection sqlConnection1 = new SqlConnection(Data.value);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "SELECT Название FROM type";
@@ -52,12 +55,18 @@ namespace diplom
                     comboBox1.Items.Add((string)reader.GetValue(0));
                 }
 
-            sqlConnection1.Close();
+            sqlConnection1.Close();*/
+
+            var reader = (from type in dbContex.type select type.Название).ToArray();
+            foreach (var curr in reader)
+            {
+                comboBox1.Items.Add(curr);
+            }
         }
 
         private void updateComBoxCATEGORY()
         {
-            SqlConnection sqlConnection1 = new SqlConnection(Data.value);
+            /*SqlConnection sqlConnection1 = new SqlConnection(Data.value);
             SqlCommand cmd2 = new SqlCommand();
 
             cmd2.CommandText = "SELECT Название FROM Category";
@@ -72,45 +81,144 @@ namespace diplom
                     comboBox.Items.Add((string)reader.GetValue(0));
                 }
 
-            sqlConnection1.Close();
+            sqlConnection1.Close();*/
+
+            var reader = (from Category in dbContex.Category select Category.Название).ToArray();
+            foreach (var curr in reader)
+            {
+                comboBox.Items.Add(curr);
+            }
+        }
+
+        private int getAdderss_ID(string ltd, string lng)
+        {
+            int id = -1;
+            var LngLtd = from Addres in dbContex.Addres where Addres.Широта == textBox8.Text && Addres.Долгота == textBox9.Text select Addres.id_Address;
+            foreach (var item in LngLtd)
+            {
+                id = (int)item;
+            }
+            System.Windows.Forms.MessageBox.Show("ID Координаты адреса " + id.ToString());
+            return id;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         { 
                        
-            if(textBox10.Text != "")
+            if(textBox1.Text != "")
             {   
                 if(textBox8.Text != "" && textBox9.Text != "")
                 {
-                    int idAddress = -1;
-                    int type = 0, categ = 0;
+                    int Type_ID = 0, Categ_ID = 0;
+                    int Address_ID;
                     try
                     {
-                        SqlConnection con = new SqlConnection(Data.value);
-                        con.Open();
+                        /*SqlConnection con = new SqlConnection(Data.value);
+                        con.Open();*/
 
                         //Получаю id типа воды
-                        try
+                        //try
+                        //{
+                        var reader = from type in dbContex.type where type.Название == comboBox1.SelectedItem.ToString() select type.id_type;
+                        foreach(var item in reader)
                         {
-                            string queryType = "SELECT * FROM type WHERE Название='" + comboBox1.SelectedItem.ToString() + "'";
-                            SqlCommand comm = new SqlCommand(queryType, con);
-                            using (var read = comm.ExecuteReader())
+                            Type_ID = (int)item;
+                            System.Windows.Forms.MessageBox.Show("ID Типа " + item.ToString());
+                        }
+                        if (getAdderss_ID(textBox8.Text, textBox9.Text) == -1)
+                        {
+                            Addres addr = new Addres
                             {
-                                while (read.Read())
-                                {
-                                    type = (int)read.GetValue(0);
-                                }
+                                Широта = textBox8.Text,
+                                Долгота = textBox9.Text
+                            };
+                            dbContex.Addres.InsertOnSubmit(addr);
+                            // Submit the change to the database.
+                            try
+                            {
+                                dbContex.SubmitChanges();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
                             }
                         }
-                        catch
+
+                        //Повторно отправляю запрос и получаю id Адреса
+                        Address_ID = getAdderss_ID(textBox8.Text, textBox9.Text);
+
+                        //Получаю id категории воды
+                        var ID_Categs = from Category in dbContex.Category where Category.Название == comboBox1.SelectedItem.ToString() select Category.id_categ;
+                        foreach (var item in ID_Categs)
                         {
-                            System.Windows.Forms.MessageBox.Show("Введите тип воды");
-                            con.Close();
-                            return;
+                            Categ_ID = (int)item;
+                            System.Windows.Forms.MessageBox.Show("ID Категории " + item.ToString());
                         }
 
+                        SqlConnection con = new SqlConnection(Data.value);
+                        con.Open();
+                        string query = "INSERT INTO Prob_water (Название, Дата_забора, Консервация, Объем, id_Address, id_type, id_categ) VALUES(@Name, @Date, @Conserv, @V, @Address, @type, @categ)";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        cmd.Parameters.AddWithValue("@Name", textBox1.Text);
+                        cmd.Parameters.AddWithValue("@Date", Convert.ToDateTime(textBox2.Text));
+                        cmd.Parameters.AddWithValue("@Conserv", comboBox2.SelectedItem.ToString());
+                        cmd.Parameters.AddWithValue("@V", textBox.ToString());
+                        cmd.Parameters.AddWithValue("@Address", Address_ID);
+                        cmd.Parameters.AddWithValue("@type", Type_ID);
+                        cmd.Parameters.AddWithValue("@categ", Categ_ID);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+
+
+                        //DateTime dt = DateTime.ParseExact(textBox2.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                        //DateTime dot = Convert.ToDateTime(textBox2.Text).Date;
+                        //string s = dt.ToString("dd.M.yyyy", CultureInfo.InvariantCulture);
+                        //DateTime ndt = dt.Date;
+                        //MessageBox.Show(ndt.ToString("d"));
+                        /*Prob_water newProb = new Prob_water
+                        {
+                            Название = textBox1.Text,
+                            Дата_забора = Convert.ToDateTime(textBox2.Text),
+                            Консервация = comboBox2.SelectedItem.ToString(),
+                            Объем = textBox.ToString(),
+                            id_Address = Address_ID,
+                            id_type = Type_ID,
+                            id_categ = Categ_ID
+                        };
+                        dbContex.Prob_water.InsertOnSubmit(newProb);
+                        // Submit the change to the database.
+                        try
+                        {
+                            dbContex.SubmitChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }*/
+                        //string queryType = "SELECT * FROM type WHERE Название='" + comboBox1.SelectedItem.ToString() + "'";
+                        /*SqlCommand comm = new SqlCommand(queryType, con);
+                        using (var read = comm.ExecuteReader())
+                        {
+                            while (read.Read())
+                            {
+                                type = (int)read.GetValue(0);
+                            }
+                        }*/
+                        //}
+                        //catch
+                        //{
+                        //System.Windows.Forms.MessageBox.Show("Введите тип воды");
+                        //con.Close();
+                        // return;
+                        //}
+
                         //Получаю id Адреса
-                        string queryAddressId = "SELECT id_Address FROM Addres WHERE Широта = '" + textBox8.Text + "' AND Долгота = '" + textBox9.Text+"'";
+
+
+                        //Если запрос ничего не вернул заношу в таблицу координаты
+
+
+                        /* string queryAddressId = "SELECT id_Address FROM Addres WHERE Широта = '" + textBox8.Text + "' AND Долгота = '" + textBox9.Text+"'";
                         SqlCommand comm2 = new SqlCommand(queryAddressId, con);
                         try
                         {
@@ -198,9 +306,9 @@ namespace diplom
                         cmd.Parameters.AddWithValue("@type", type);
                         cmd.Parameters.AddWithValue("@categ", categ);
                         cmd.ExecuteNonQuery();
-                        con.Close();
+                        con.Close();*/
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         throw new Exception(ex.ToString(), ex);
                     }                   
