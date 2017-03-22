@@ -161,19 +161,19 @@ namespace diplom
 			}
 		}
 		
-		public System.Data.Linq.Table<Sensor_Profile> Sensor_Profile
-		{
-			get
-			{
-				return this.GetTable<Sensor_Profile>();
-			}
-		}
-		
 		public System.Data.Linq.Table<type> type
 		{
 			get
 			{
 				return this.GetTable<type>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Sensor_Profile> Sensor_Profile
+		{
+			get
+			{
+				return this.GetTable<Sensor_Profile>();
 			}
 		}
 	}
@@ -907,7 +907,7 @@ namespace diplom
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Дата_забора", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Дата_забора", DbType="DateTime")]
 		public System.Nullable<System.DateTime> Дата_забора
 		{
 			get
@@ -927,7 +927,7 @@ namespace diplom
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Дата_анализа", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Дата_анализа", DbType="DateTime")]
 		public System.Nullable<System.DateTime> Дата_анализа
 		{
 			get
@@ -1682,69 +1682,6 @@ namespace diplom
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Sensor_Profile")]
-	public partial class Sensor_Profile
-	{
-		
-		private long _id_pers;
-		
-		private long _id_Prof;
-		
-		private long _id_sensor;
-		
-		public Sensor_Profile()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_pers", DbType="BigInt NOT NULL")]
-		public long id_pers
-		{
-			get
-			{
-				return this._id_pers;
-			}
-			set
-			{
-				if ((this._id_pers != value))
-				{
-					this._id_pers = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Prof", DbType="BigInt NOT NULL")]
-		public long id_Prof
-		{
-			get
-			{
-				return this._id_Prof;
-			}
-			set
-			{
-				if ((this._id_Prof != value))
-				{
-					this._id_Prof = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_sensor", DbType="BigInt NOT NULL")]
-		public long id_sensor
-		{
-			get
-			{
-				return this._id_sensor;
-			}
-			set
-			{
-				if ((this._id_sensor != value))
-				{
-					this._id_sensor = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.type")]
 	public partial class type : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1856,6 +1793,69 @@ namespace diplom
 		{
 			this.SendPropertyChanging();
 			entity.type = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Sensor_Profile")]
+	public partial class Sensor_Profile
+	{
+		
+		private long _id_pers;
+		
+		private long _id_Prof;
+		
+		private long _id_sensor;
+		
+		public Sensor_Profile()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_pers", DbType="BigInt NOT NULL")]
+		public long id_pers
+		{
+			get
+			{
+				return this._id_pers;
+			}
+			set
+			{
+				if ((this._id_pers != value))
+				{
+					this._id_pers = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Prof", DbType="BigInt NOT NULL")]
+		public long id_Prof
+		{
+			get
+			{
+				return this._id_Prof;
+			}
+			set
+			{
+				if ((this._id_Prof != value))
+				{
+					this._id_Prof = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_sensor", DbType="BigInt NOT NULL")]
+		public long id_sensor
+		{
+			get
+			{
+				return this._id_sensor;
+			}
+			set
+			{
+				if ((this._id_sensor != value))
+				{
+					this._id_sensor = value;
+				}
+			}
 		}
 	}
 }

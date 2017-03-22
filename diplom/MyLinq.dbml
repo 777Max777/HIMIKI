@@ -46,8 +46,8 @@
   </Table>
   <Table Name="dbo.Prob_water" Member="Prob_water">
     <Type Name="Prob_water">
-      <Column Name="Дата_забора" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Дата_анализа" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Дата_забора" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Дата_анализа" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Консервация" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="Объем" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="Название" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
@@ -89,6 +89,13 @@
       <Association Name="Sensor_Sensor_Indicate" Member="Sensor" ThisKey="id_sensor" OtherKey="id_sensor" Type="Sensor" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.type" Member="type">
+    <Type Name="type">
+      <Column Name="id_type" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Название" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="type_Prob_water" Member="Prob_water" ThisKey="id_type" OtherKey="id_type" Type="Prob_water" />
+    </Type>
+  </Table>
   <Table Name="dbo.Sensor_Profile" Member="Sensor_Profile">
     <Type Name="Sensor_Profile">
       <Column Name="id_pers" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
@@ -97,13 +104,6 @@
       <Association Name="Person_Sensor_Profile" Member="Person" ThisKey="id_pers" OtherKey="id_pers" Type="Person" IsForeignKey="true" />
       <Association Name="Profile_Sensor_Profile" Member="Profile" ThisKey="id_Prof" OtherKey="id_Prof" Type="Profile" IsForeignKey="true" />
       <Association Name="Sensor_Sensor_Profile" Member="Sensor" ThisKey="id_sensor" OtherKey="id_sensor" Type="Sensor" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.type" Member="type">
-    <Type Name="type">
-      <Column Name="id_type" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Название" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Association Name="type_Prob_water" Member="Prob_water" ThisKey="id_type" OtherKey="id_type" Type="Prob_water" />
     </Type>
   </Table>
 </Database>

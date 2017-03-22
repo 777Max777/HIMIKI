@@ -155,7 +155,7 @@ namespace diplom
                             System.Windows.Forms.MessageBox.Show("ID Категории " + item.ToString());
                         }
 
-                        SqlConnection con = new SqlConnection(Data.value);
+                        /*SqlConnection con = new SqlConnection(Data.value);
                         con.Open();
                         string query = "INSERT INTO Prob_water (Название, Дата_забора, Консервация, Объем, id_Address, id_type, id_categ) VALUES(@Name, @Date, @Conserv, @V, @Address, @type, @categ)";
                         SqlCommand cmd = new SqlCommand(query, con);
@@ -167,7 +167,7 @@ namespace diplom
                         cmd.Parameters.AddWithValue("@type", Type_ID);
                         cmd.Parameters.AddWithValue("@categ", Categ_ID);
                         cmd.ExecuteNonQuery();
-                        con.Close();
+                        con.Close();*/
 
 
                         //DateTime dt = DateTime.ParseExact(textBox2.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
@@ -175,7 +175,7 @@ namespace diplom
                         //string s = dt.ToString("dd.M.yyyy", CultureInfo.InvariantCulture);
                         //DateTime ndt = dt.Date;
                         //MessageBox.Show(ndt.ToString("d"));
-                        /*Prob_water newProb = new Prob_water
+                        Prob_water newProb = new Prob_water
                         {
                             Название = textBox1.Text,
                             Дата_забора = Convert.ToDateTime(textBox2.Text),
@@ -194,7 +194,7 @@ namespace diplom
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message);
-                        }*/
+                        }
                         //string queryType = "SELECT * FROM type WHERE Название='" + comboBox1.SelectedItem.ToString() + "'";
                         /*SqlCommand comm = new SqlCommand(queryType, con);
                         using (var read = comm.ExecuteReader())
